@@ -42,7 +42,7 @@ button {
     background-color: #2424ff;
     height: 30px;
     border-radius: 5px;
-    width: 40px;
+    width: fit-content;
     font-size: 18px;
     padding: 5px;
 }

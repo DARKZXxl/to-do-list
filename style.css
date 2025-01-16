@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    background-color: antiquewhite;
+}
+
+main {
+    text-align: center;
+    background-color: rgb(27, 27, 27);
+    width: 330px;
+    padding: 20px 20px 10px 20px;
+    border: 3px solid #2424ff;
+    border-radius: 7px;
+}
+
+#tarefaName {
+    border-radius: 5px;
+    height: 30px;
+    width: 170px;
+    border: none;
+    letter-spacing: 2px;
+    padding-left: 5px;
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    border: none;
+    background-color: #2424ff;
+    height: 30px;
+    border-radius: 5px;
+    width: 40px;
+    font-size: 18px;
+    padding: 5px;
+}
+
+hr {
+    border: 1px solid #2424ff;
+    margin-bottom: 10px;
+}
+
+#tarefas div {
+    margin: 10px;
+    border: 2px solid #cacaca;
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    height: 20px;
+}
+
+#tarefas input {
+    margin-right: 5px;
+    transform: scale(1.5);
+}
+
+
+#tarefas p {
+    position: relative;
+    top: 2px;
+}
+
+.fim {
+    font-size: 14px;
+    margin: 0 7px 0 7px;
+    color: red;
+    position: relative;
+    top: 3.9px !important;
+}
+
+#tarefa {
+    margin-right: 152px;
+}
+
+

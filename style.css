@@ -13,6 +13,77 @@ body {
     background-color: antiquewhite;
 }
 
+nav {
+    background-color: #d8d8d8;
+    height: 100vh;
+    width: 0;
+    color: black;
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.152);
+    max-width: 200px;
+}
+
+#x {
+    display: none;
+}
+
+
+#p {
+    display: none;
+    padding: 10px;
+    color: rgb(0, 0, 0);
+
+}
+
+#historico {
+    margin-top: 60px;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+#historico:hover {
+    background-color: #f8f8f83c;
+}
+
+#textos {
+    position: absolute;
+    top: 190px;
+    margin-left: 65px;
+    background-color: rgb(239, 239, 239);
+    border: 1px solid black;
+    height: fit-content;
+    min-height: 300px;
+    width: 200px;
+    color: black;
+    display: none;
+    z-index: 15;
+}
+
+#inline {
+    display: inline-block;
+    color: red;
+    position: absolute;
+    left: 140px;
+}
+
+ul {
+    list-style: none;
+    padding: 10px;
+    text-align: justify;
+}
+
+
+img {
+    position: absolute;
+    top: -1px;
+    left: 5px;
+    height: 50px;
+    width: 45px;
+}
+
 main {
     text-align: center;
     background-color: rgb(27, 27, 27);
@@ -63,7 +134,7 @@ hr {
 
 #tarefas input {
     margin-right: 5px;
-    transform: scale(1.5);
+    transform: scaleX(1.5);
 }
 
 

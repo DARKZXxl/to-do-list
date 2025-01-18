@@ -3,9 +3,37 @@ const addTarefa = document.getElementById('addTarefa');
 let completo = document.getElementById('completo');
 let incompleto = document.getElementById('incompleto');
 const tarefas = document.getElementById('tarefas');
+const img = document.querySelector('img')
+const nav = document.querySelector('nav')
+const p = document.querySelector('#p')
+const ul = document.getElementById('ul')
+const x = document.querySelector('#x')
+const historico = document.getElementById('historico')
+const textos = document.getElementById('textos')
+const txt = []
 let i = 0;
 completo.innerText = 0
 incompleto.innerText = 0
+
+img.addEventListener('click', () => {
+    p.style.display = 'block'
+    nav.style.width = '25rem'
+    nav.style.transition = '1s'
+    x.style.display = 'block'
+    historico.style.display = 'block'
+
+})
+
+x.addEventListener('click', function () {
+    p.style.display = 'none'
+    nav.style.width = '0px'
+    nav.style.transition = '900ms'
+    x.style.display = 'none'
+    textos.style.display = 'none'
+})
+
+
+
 
 function salvarTarefas() {
     const tarefasList = [];
@@ -109,7 +137,6 @@ function carregarTarefas() {
     }
 }
 
-window.onload = carregarTarefas;
 
 addTarefa.addEventListener('click', () => {
     incompleto.innerText++;
@@ -125,6 +152,7 @@ addTarefa.addEventListener('click', () => {
     const tarefa = document.createElement('p');
     tarefa.id = `tarefa${i + 1}`;
     tarefa.innerText = tarefaName.value;
+    txt.push(tarefaName.value)
 
     const Delete = document.createElement('p');
     Delete.className = 'fim';
@@ -174,3 +202,75 @@ addTarefa.addEventListener('click', () => {
 
     salvarTarefas();
 });
+
+function carregarHistorico() {
+    // Recupera o histórico salvo do localStorage
+    const historicoSalvo = JSON.parse(localStorage.getItem('historico'));
+
+    // Se houver histórico salvo, cria os itens da lista
+    if (historicoSalvo) {
+        historicoSalvo.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = item;
+            const para = document.createElement('p');
+            para.id = 'inline';
+            para.innerText = 'Deletar';
+            li.appendChild(para);
+            ul.append(li);
+            textos.appendChild(ul);
+
+            li.addEventListener('click', () => {
+                ul.removeChild(li);
+                
+                const updatedHistorico = historicoSalvo.filter(h => h !== item);
+                localStorage.setItem('historico', JSON.stringify(updatedHistorico));
+            });
+        });
+    }
+}
+
+window.onload = () => {
+    carregarTarefas();
+    carregarHistorico();
+};
+
+
+historico.addEventListener('click', (ev) => {
+    ev.preventDefault();
+    console.log(txt);
+    
+        textos.style.display = 'block';
+        let historicoSalvo = JSON.parse(localStorage.getItem('historico')) || [];
+
+        // Adiciona novos itens ao histórico
+        txt.forEach(item => {
+            const li = document.createElement('li');
+            li.innerHTML = item;
+            const para = document.createElement('p');
+            para.id = 'inline';
+            para.innerText = 'Deletar';
+            li.appendChild(para);
+            ul.append(li);
+            textos.appendChild(ul);
+
+            li.addEventListener('click', () => {
+                ul.removeChild(li);
+
+                // Remove o item do histórico no localStorage
+                historicoSalvo = historicoSalvo.filter(h => h !== item);
+                localStorage.setItem('historico', JSON.stringify(historicoSalvo));
+            });
+
+            // Salva o item no histórico do localStorage
+            historicoSalvo.push(item);
+        });
+
+        // Atualiza o histórico no localStorage
+        localStorage.setItem('historico', JSON.stringify(historicoSalvo));
+    
+});
+
+
+
+
+

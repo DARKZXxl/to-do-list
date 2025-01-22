@@ -9,11 +9,19 @@
 </head>
 <body>
     <header>
-        <img src="icons8-menu.svg" alt="">
+        <div id="menu">
+            <img src="icons8-menu.svg" alt="" >
+        </div>
         <nav>
             <img src="icons8-x.svg" alt="" id="x">
+            <button id="AZ">Ordernar A-Z</button>
+            <button id="ZA">Ordernar Z-A</button>
+            <button id="data">Por data</button>
+            <h2 id="tituloHistorico">historico</h2>
             <div id="historico">
-                <p id="p">historico</p>
+                <ul id="ul">
+                    <h2 id="vazio">Historico Vazio</h2>
+                </ul>
             </div>
         </nav>
     </header>
@@ -23,15 +31,11 @@
         <button id="addTarefa">Adicionar</button>
         <h2>Task List</h2>
         <div id="tarefas">
-         
+            
         </div>
         <hr>
         <p>Completed: <span id="completo"></span> | Uncompleted: <span id="incompleto"></span></p>
     </main>
-    <div id="textos">
-        <ul id="ul">
-            
-        </ul>
-    </div>
+   
 </body>
 </html>

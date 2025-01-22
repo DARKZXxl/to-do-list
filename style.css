@@ -11,12 +11,14 @@ body {
     align-items: center; 
     height: 100vh;
     background-color: antiquewhite;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 nav {
     background-color: #d8d8d8;
     height: 100vh;
-    width: 0;
+    width: 0; 
     color: black;
     z-index: 10;
     position: fixed;
@@ -24,22 +26,40 @@ nav {
     left: 0;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.152);
     max-width: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+nav button {
+    width: 12rem;
+    border-radius: 15px;
+    border: none;
+    background-color: #afafaf;
+    padding: 5px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-top: 80px;
+    margin-left: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.548);
+
 }
 
 #x {
     display: none;
 }
 
-
-#p {
-    display: none;
-    padding: 10px;
-    color: rgb(0, 0, 0);
-
+.cheia {
+    background-color: #8b8b8bd1;
+    width: 11rem;
+    height: 20px;
+    border-radius: 10px;
+    margin-bottom: 4px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.351);
 }
 
 #historico {
-    margin-top: 60px;
+    margin-top: 100px;
+    min-height: 230px;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
 }
@@ -48,19 +68,23 @@ nav {
     background-color: #f8f8f83c;
 }
 
-#textos {
+#menu {
     position: absolute;
-    top: 190px;
-    margin-left: 65px;
-    background-color: rgb(239, 239, 239);
-    border: 1px solid black;
-    height: fit-content;
-    min-height: 300px;
-    width: 200px;
-    color: black;
-    display: none;
-    z-index: 15;
+    top: 0px;
+    left: 0;
+    margin-bottom: 110px;
 }
+
+#tituloHistorico {
+    text-align: center;
+    position: relative;
+    top: 100px;
+}
+
+#vazio {
+    position: absolute;
+}
+
 
 #inline {
     display: inline-block;
@@ -71,8 +95,12 @@ nav {
 
 ul {
     list-style: none;
-    padding: 10px;
+    padding: 5px;
     text-align: justify;
+    transition: width 1s;
+    display: none;
+    margin: 5px;
+    border-radius: 5px;
 }
 
 
@@ -91,6 +119,9 @@ main {
     padding: 20px 20px 10px 20px;
     border: 3px solid #2424ff;
     border-radius: 7px;
+    margin-top: px;
+    position: relative;
+    top: 100px;
 }
 
 #tarefaName {
@@ -108,7 +139,7 @@ input:focus {
     outline: none;
 }
 
-button {
+#addTarefa {
     border: none;
     background-color: #2424ff;
     height: 30px;

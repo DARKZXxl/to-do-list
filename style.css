@@ -119,9 +119,7 @@ main {
     padding: 20px 20px 10px 20px;
     border: 3px solid #2424ff;
     border-radius: 7px;
-    margin-top: px;
-    position: relative;
-    top: 100px;
+    margin-top: 137;
 }
 
 #tarefaName {
@@ -137,6 +135,10 @@ main {
 
 input:focus {
     outline: none;
+}
+
+#tarefas {
+    min-height: 105px
 }
 
 #addTarefa {

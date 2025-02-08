@@ -310,5 +310,20 @@ ZA.addEventListener('click', () => {
     });
 });
 
+data.addEventListener('click', () => {
+    const tarefas = document.querySelectorAll('#tarefas div');
+    const tarefasArray = Array.from(tarefas);
 
+    tarefasArray.sort((a, b) => {
+        const idA = parseInt(a.id);
+        const idB = parseInt(b.id);
+        return idA - idB;
+    });
 
+    const tarefasContainer = document.getElementById('tarefas');
+    tarefasContainer.innerHTML = ''; // Limpa as tarefas atuais
+
+    tarefasArray.forEach(tarefa => {
+        tarefasContainer.appendChild(tarefa); // Adiciona as tarefas ordenadas
+    });
+});
